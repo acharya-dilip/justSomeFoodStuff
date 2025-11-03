@@ -22,6 +22,10 @@ static void activate(GtkApplication *app,gpointer user_data) {
     GtkWidget *labelBurgerRare = gtk_label_new("");
     gtk_grid_attach(GTK_GRID(gridParent),labelBurgerRare,3,5,5,5);
 
+    //Init of labelBurgerEpic
+    GtkWidget *labelBurgerEpic = gtk_label_new("");
+    gtk_grid_attach(GTK_GRID(gridParent),labelBurgerEpic,3,5,5,5);
+
     //Init of buttonBurger
     GtkWidget *buttonBurger = gtk_button_new_with_label("BUTTON BORGER");
     gtk_grid_attach(GTK_GRID(gridParent),buttonBurger,3,5,5,5);
