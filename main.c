@@ -17,22 +17,29 @@ static void activate(GtkApplication *app,gpointer user_data) {
     //Init of labelBurgerNormal
     GtkWidget *labelBurgerNormal = gtk_label_new("");
     gtk_grid_attach(GTK_GRID(gridParent),labelBurgerNormal,3,5,5,5);
+    gtk_widget_add_css_class(labelBurgerNormal,"labelBurgerNormal");
 
     //Init of labelBurgerRare
     GtkWidget *labelBurgerRare = gtk_label_new("");
     gtk_grid_attach(GTK_GRID(gridParent),labelBurgerRare,3,5,5,5);
+    gtk_widget_add_css_class(labelBurgerRare,"labelBurgerRare");
 
     //Init of labelBurgerEpic
     GtkWidget *labelBurgerEpic = gtk_label_new("");
     gtk_grid_attach(GTK_GRID(gridParent),labelBurgerEpic,3,5,5,5);
+    gtk_widget_add_css_class(labelBurgerEpic,"labelBurgerEpic");
 
     //Init of labelBurgerLegendary
     GtkWidget *labelBurgerLegendary = gtk_label_new("");
     gtk_grid_attach(GTK_GRID(gridParent),labelBurgerLegendary,3,5,5,5);
+    gtk_widget_add_css_class(labelBurgerLegendary,"labelBurgerLegendary");
 
     //Init of buttonBurger
     GtkWidget *buttonBurger = gtk_button_new_with_label("BUTTON BORGER");
     gtk_grid_attach(GTK_GRID(gridParent),buttonBurger,3,5,5,5);
+    gtk_widget_add_css_class(buttonBurger,"buttonBurger");
+
+
 
 }
 
