@@ -14,9 +14,13 @@ static void activate(GtkApplication *app,gpointer user_data) {
     GtkWidget *gridParent = gtk_grid_new();
     gtk_window_set_child(GTK_WINDOW(windowBurger),gridParent);
 
+    //Init of labelBurgerNormal
+    GtkWidget *labelBurgerNormal = gtk_label_new("");
+    gtk_grid_attach(GTK_GRID(gridParent),labelBurgerNormal,3,5,5,5);
+
     //Init of buttonBurger
     GtkWidget *buttonBurger = gtk_button_new_with_label("BUTTON BORGER");
-    gtk_grid_attach(GTK_GRID(gridParent),buttonBurger,3,3,5,5);
+    gtk_grid_attach(GTK_GRID(gridParent),buttonBurger,3,5,5,5);
 
 }
 
