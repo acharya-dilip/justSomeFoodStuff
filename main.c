@@ -16,22 +16,22 @@ static void activate(GtkApplication *app,gpointer user_data) {
 
     //Init of labelBurgerNormal
     GtkWidget *labelBurgerNormal = gtk_label_new("");
-    gtk_grid_attach(GTK_GRID(gridParent),labelBurgerNormal,3,5,5,5);
+    gtk_grid_attach(GTK_GRID(gridParent),labelBurgerNormal,0,0,5,5);
     gtk_widget_add_css_class(labelBurgerNormal,"labelBurgerNormal");
 
     //Init of labelBurgerRare
     GtkWidget *labelBurgerRare = gtk_label_new("");
-    gtk_grid_attach(GTK_GRID(gridParent),labelBurgerRare,3,5,5,5);
+    gtk_grid_attach(GTK_GRID(gridParent),labelBurgerRare,1,0,5,5);
     gtk_widget_add_css_class(labelBurgerRare,"labelBurgerRare");
 
     //Init of labelBurgerEpic
     GtkWidget *labelBurgerEpic = gtk_label_new("");
-    gtk_grid_attach(GTK_GRID(gridParent),labelBurgerEpic,3,5,5,5);
+    gtk_grid_attach(GTK_GRID(gridParent),labelBurgerEpic,2,0,5,5);
     gtk_widget_add_css_class(labelBurgerEpic,"labelBurgerEpic");
 
     //Init of labelBurgerLegendary
     GtkWidget *labelBurgerLegendary = gtk_label_new("");
-    gtk_grid_attach(GTK_GRID(gridParent),labelBurgerLegendary,3,5,5,5);
+    gtk_grid_attach(GTK_GRID(gridParent),labelBurgerLegendary,3,0,5,5);
     gtk_widget_add_css_class(labelBurgerLegendary,"labelBurgerLegendary");
 
     //Init of buttonBurger
@@ -54,6 +54,15 @@ int main(int argc, char **argv){
     g_signal_connect (app, "activate", G_CALLBACK (activate), NULL);
     status = g_application_run (G_APPLICATION (app), argc, argv);
     g_object_unref (app);
+
+    GtkCssProvider *provider = gtk_css_provider_new();
+    gtk_css_provider_load_from_path(provider, "styles.css");
+
+    gtk_style_context_add_provider_for_display(
+        gdk_display_get_default(),
+        GTK_STYLE_PROVIDER(provider),
+        GTK_STYLE_PROVIDER_PRIORITY_USER
+    );;
 
     return status;
 }
