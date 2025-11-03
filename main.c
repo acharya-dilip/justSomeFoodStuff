@@ -9,6 +9,10 @@ static void activate(GtkApplication *app,gpointer user_data) {
     GtkWidget *windowBurger = gtk_application_window_new(app);
     gtk_window_set_title(GTK_WINDOW(windowBurger),"BurgerClicker");
     gtk_window_present(GTK_WINDOW(windowBurger));
+
+    //Init of gridParent
+    GtkWidget *gridParent = gtk_grid_new();
+    gtk_window_set_child(GTK_WINDOW(windowBurger),gridParent);
 }
 
 
