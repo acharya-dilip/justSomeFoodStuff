@@ -5,7 +5,10 @@
 
 
 static void activate(GtkApplication *app,gpointer user_data) {
-
+    //Init of windowBurger
+    GtkWidget *windowBurger = gtk_application_window_new(app);
+    gtk_window_set_title(GTK_WINDOW(windowBurger),"BurgerClicker");
+    gtk_window_present(GTK_WINDOW(windowBurger));
 }
 
 
